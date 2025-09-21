@@ -13,6 +13,11 @@ export const metadata: Metadata = {
   title: "PathShala AI - Smarter Tools for Learning & Upskilling",
   description: "AI-powered educational platform with personalized roadmaps, resume builder, and mentorship",
   generator: "PathShala AI",
+  icons: {
+    icon: "/main_logo.jpg",   // stored in /public/logo.png
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
 }
 
 export default function RootLayout({

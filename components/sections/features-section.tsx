@@ -4,7 +4,7 @@ import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { CardContent } from "@/components/ui/card"
 // Updated and more relevant icons from lucide-react
-import { Route, FileText, Lightbulb, Briefcase, MessageCircle } from "lucide-react"
+import { Route, FileText, Lightbulb, Briefcase, MessageCircle, Play } from "lucide-react"
 
 const features = [
   {
@@ -21,7 +21,7 @@ const features = [
         "Includes real-world projects",
         "Track your progress visually",
       ],
-      image: "/ai-roadmap-dashboard-with-learning-paths.jpg",
+      image: "/Roadmapfeature.mp4",
     },
   },
   {
@@ -38,7 +38,7 @@ const features = [
         "Professional templates",
         "Tailor for any job application",
       ],
-      image: "/code-analysis-dashboard-with-ai-feedback.jpg",
+      image: "/Resume.mp4",
     },
   },
   {
@@ -55,7 +55,7 @@ const features = [
         "Identify and fill knowledge gaps",
         "Prepare for technical interviews",
       ],
-      image: "/interactive-quiz-interface-with-ai-feedback.jpg",
+      image: "/quiz.mp4",
     },
   },
   {
@@ -72,7 +72,7 @@ const features = [
         "Get expert career advice",
         "Build your professional network",
       ],
-      image: "/community-dashboard-with-user-profiles-and-discuss.jpg",
+      image: "/Mentor.mp4",
     },
   },
   {
@@ -89,7 +89,7 @@ const features = [
         "Brainstorm project ideas",
         "Practice interview answers",
       ],
-      image: "/gamification-dashboard-with-rewards-and-achievemen.jpg",
+      image: "/Chatbot.mp4",
     },
   },
 ]
@@ -98,31 +98,29 @@ export function FeaturesSection() {
   const [activeFeature, setActiveFeature] = useState(features[0])
 
   return (
-    <section className="py-24 bg-muted/20 border-b border-background">
+    <section className="py-24 bg-black border border-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
         >
           <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-balance">
-            An AI Co-Pilot for Your <span className="text-primary">Entire Career</span>
+            Everything You Need to <span className="text-primary">Master</span> Your Skills
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
-            From discovering your path to landing the job, our platform provides the AI-powered tools you need to succeed.
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
+            Comprehensive tools and resources designed to accelerate your learning journey
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Left column - Feature list */}
           <motion.div
-            className="space-y-4"
+            className="space-y-4 border-background border-0"
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
           >
             <h3 className="text-xl font-semibold mb-6">EXPLORE FEATURES</h3>
             {features.map((feature) => {
@@ -141,8 +139,7 @@ export function FeaturesSection() {
                 >
                   <div className="flex items-center space-x-3">
                     <div className={`p-2 rounded-lg ${isActive ? "bg-primary text-primary-foreground" : "bg-muted"}`}>
-                      {/* --- Icon Color Changed Here --- */}
-                      <Icon className="h-5 w-5 text-yellow-400" />
+                      <Icon className="h-5 w-5" />
                     </div>
                     <div>
                       <h4 className="font-semibold text-sm">{feature.title}</h4>
@@ -163,33 +160,26 @@ export function FeaturesSection() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.3 }}
-                className="h-full"
+                className="relative"
               >
-                <CardContent className="p-0 h-full min-h-[400px] bg-card rounded-lg border border-border overflow-hidden">
-                  <div className="h-full flex flex-col">
-                    {/* Feature header */}
-                    <div className="p-6 border-b border-border">
-                      <div className="flex items-center space-x-3 mb-4">
-                        <div className="p-2 rounded-lg bg-primary text-primary-foreground">
-                          {/* --- Icon Color Changed Here --- */}
-                          <activeFeature.icon className="h-6 w-6 text-yellow-400" />
-                        </div>
-                        <div>
-                          <h3 className="text-2xl font-bold">{activeFeature.title}</h3>
-                          <p className="text-primary font-medium">{activeFeature.subtitle}</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="h-80 p-0">
-                      <img
-                        src={activeFeature.content.image || "/placeholder.svg"}
-                        alt={activeFeature.content.title}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  </div>
-                </CardContent>
+                <div className="relative aspect-video min-h-[500px] bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl border border-border/50 overflow-hidden">
+                  {activeFeature.content.image.endsWith('.mp4') ? (
+                    <video
+                      src={activeFeature.content.image}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <img
+                      src={activeFeature.content.image || "/placeholder.svg"}
+                      alt={activeFeature.content.title}
+                      className="w-full h-full object-cover"
+                    />
+                  )}
+                </div>
               </motion.div>
             </AnimatePresence>
           </div>

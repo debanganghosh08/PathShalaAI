@@ -33,8 +33,8 @@ export function HeroSection() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
               >
-                Smarter Tools for <span className="text-primary">Learning</span> &{" "}
-                <span className="text-primary">Upskilling</span>
+                Job Market is <span className="text-primary">Changing.<br /></span>Your 
+                <span className="text-primary"> Career Plan </span>Should Too.
               </motion.h1>
 
               <motion.p
@@ -43,7 +43,7 @@ export function HeroSection() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
               >
-                Structured Learning • Real Practice • AI Guidance
+                Structured Learning • AI Guidance • Job Readiness
               </motion.p>
             </div>
 
@@ -79,33 +79,15 @@ export function HeroSection() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className="relative aspect-video bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl border border-border/50 overflow-hidden">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center backdrop-blur-sm">
-                  <Play className="h-8 w-8 text-primary ml-1" />
-                </div>
-              </div>
-
-              {/* Floating elements */}
-              <motion.div
-                className="absolute top-4 left-4 bg-card/80 backdrop-blur-sm rounded-lg p-3 border border-border/50"
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY }}
-              >
-                <div className="text-xs font-medium text-foreground">AI Roadmap</div>
-                <div className="text-xs text-muted-foreground">Custom Path to Mastery</div>
-              </motion.div>
-
-              <motion.div
-                className="absolute bottom-4 right-4 bg-card/80 backdrop-blur-sm rounded-lg p-3 border border-border/50"
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, delay: 1.5 }}
-              >
-                <div className="text-xs font-medium text-foreground">Progress: 75%</div>
-                <div className="w-16 h-1 bg-muted rounded-full mt-1">
-                  <div className="w-3/4 h-full bg-primary rounded-full"></div>
-                </div>
-              </motion.div>
+            <div className="relative aspect-video rounded-2xl border border-border/50 overflow-hidden">
+              <video
+                src="/Roadmapgeneration.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover"
+              />
             </div>
           </motion.div>
         </div>

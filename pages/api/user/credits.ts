@@ -23,18 +23,28 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
 
     const decoded = jwt.verify(token, process.env.JWT_SECRET) as { userId: string };
+    
     const user = await User.findById(decoded.userId);
 
     if (!user) {
       return res.status(404).json({ message: 'User not found' });
     }
 
-    if (user.credits > 0) {
-      user.credits -= 1;
-      await user.save();
-      res.status(200).json({ credits: user.credits });
+    if (user.credits <= 0) {
+      return res.status(400).json({ message: 'Insufficient credits' });
+    }
+
+    const updatedUser = await User.findByIdAndUpdate(
+      decoded.userId,
+      { $inc: { credits: -1 } },
+      { new: true }
+    );
+
+    if (updatedUser) {
+      res.status(200).json({ credits: updatedUser.credits });
     } else {
-      res.status(400).json({ message: 'Insufficient credits' });
+      // This case should ideally not be reached if the user was found before.
+      res.status(404).json({ message: 'User not found during update' });
     }
 
   } catch (error: any) {
