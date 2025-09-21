@@ -1,19 +1,22 @@
-# PathShala AI: Your Career, Architected by AI
+<h1 align="center">PathShala AI</h1>
 
 <div align="center">
 
-**A hyper-personalized career and skills advisor for India's youth, powered by Google Cloud's Generative AI.**
+<img width="2528" height="1427" alt="image" src="https://github.com/user-attachments/assets/23c7ec34-0573-45f6-9ddc-b0b25687a6a5" />
 
 </div>
 
 <div align="center">
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js)](https://nextjs.org/)
-[![Google Cloud](https://img.shields.io/badge/Google_Cloud-4285F4?logo=google-cloud)](https://cloud.google.com/)
-[![Gemini](https://img.shields.io/badge/Gemini_API-8E75B9?logo=google-gemini)](https://ai.google.dev/)
+<h2>A personalized career and skills advisor for India's youth, powered by Google Cloud's Generative AI.</h2>
 
 </div>
+
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=nextjs,tailwind,mongodb,vercel,gcp,typescript" />
+  </a>
+</p>
 
 <p align="center">
   <a href="#-the-problem">The Problem</a> •
@@ -21,7 +24,8 @@
   <a href="#-google-cloud-ai-integration">AI Integration</a> •
   <a href="#-key-features">Key Features</a> •
   <a href="#-tech-stack">Tech Stack</a> •
-  <a href="#️-how-to-run-locally">Run Locally</a>
+  <a href="#️-how-to-run-locally">Run Locally</a> •
+  <a href="#️-scalability-and-future-vision">Scalability & Future Plans</a>
 </p>
 
 ---
@@ -31,14 +35,10 @@
 <img src="https://img.shields.io/badge/LIVE%20DEMO-Golden?style=for-the-badge&logo=vercel" alt="Live Demo">
 </a>
 </p>
+<h3>🚀 Project Demo</h3>
+Click on above button or view live at: https://dharmasynccodeveda.vercel.app/
 
 ---
-
-<div align="center">
-
-<img width="2528" height="1427" alt="image" src="https://github.com/user-attachments/assets/23c7ec34-0573-45f6-9ddc-b0b25687a6a5" />
-
-</div>
 
 ## 🎯 The Problem
 
@@ -123,3 +123,28 @@ JWT_SECRET=a_strong_random_secret_key
 npm run dev
 ```
 The application will be available at http://localhost:3000
+
+## 📈 Scalability and Future Vision
+**Scalability:** Built on a serverless architecture with Next.js on Vercel and a managed MongoDB Atlas cluster, the application is designed to scale effortlessly with user growth.
+
+<h2> 🛣️ Future Vision:</h2>
+
+**AI-Powered Mock Interviews:** An interactive feature to practice interviews with an AI that provides real-time feedback.
+
+**Real-Time Market Insights:** An AI-driven dashboard showing which skills are trending in the user's industry.
+
+**Gamified Learning:** Introducing streaks, achievements, and leaderboards to boost engagement.
+
+<h2> 🧑‍💻 Developer</h2>
+
+<h3>Debangan Ghosh</h3>
+
+📧 Mail: primusvlog@gmail.com
+
+🔗 LinkedIn: https://www.linkedin.com/in/debangan-ghosh/
+
+<div align="center">
+
+Built with ❤️ by Debangan Ghosh.
+
+</div>
