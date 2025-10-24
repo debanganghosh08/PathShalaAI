@@ -5,7 +5,7 @@ import {
   HarmBlockThreshold,
 } from '@google/generative-ai';
 
-const MODEL_NAME = 'gemini-1.5-pro-latest';
+const MODEL_NAME = 'gemini-2.5-flash-lite';
 
 export default async function handler(
   req: NextApiRequest,
